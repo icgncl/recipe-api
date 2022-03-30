@@ -18,9 +18,16 @@ pipeline{
             }
         }
         stage("B"){
+            agent {
+                docker {
+                    image 'python:3-alpine'
+                }
+            }
             steps{
+                withEnv(["HOME=${env.WORKSPACE}"]) {
                 sh 'easy_install pip; pip install docker-compose'
                 }
+            }
         }
         stage("C"){
             steps{
