@@ -18,7 +18,7 @@ pipeline{
             }
         }
         stage("B"){
-            
+
             agent {
                 docker {
                     image 'python:2-alpine' 
@@ -47,4 +47,5 @@ pipeline{
             echo "========pipeline execution failed========"
         }
     }
+}
 }
