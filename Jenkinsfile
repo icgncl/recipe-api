@@ -19,7 +19,7 @@ pipeline{
         }
         stage("B"){
             steps{
-                sh 'sudo easy_install pip; pip install docker-compose'
+                sh 'easy_install pip; pip install docker-compose'
                 }
         }
         stage("C"){
